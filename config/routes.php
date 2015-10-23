@@ -1,15 +1,12 @@
 <?php
-    Router::AddRoute('', [], function () {
+    Router::AddRoute('', function () {
         echo 'Hello, world!';
     });
 
-    Router::AddRoute(
-        'user',
-        [
-            'username' => Router::Param(1)
-        ],
-        function ($username) {
-            echo $username;
+    Router::AddRoute('user', function () {
+            echo Router::Param(1);
         }
     );
+
+    Router::Route();
 ?>
