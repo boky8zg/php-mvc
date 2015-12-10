@@ -1,17 +1,13 @@
 <?php
-    define('VIEWS_PATH', '_views');
-
-    include('format.php');
-
     function template($file, $array) {
         ob_start();
-        include(VIEWS_PATH . '/' . $file);
+        include(ROOT . '/' . VIEWS_PATH . '/' . $file);
         return format(ob_get_clean(), $array);
     }
 
     function load($file, $data = NULL) {
         ob_start();
-        include(VIEWS_PATH . '/' . $file);
+        include(ROOT . '/' . VIEWS_PATH . '/' . $file);
         return ob_get_clean();
     }
 

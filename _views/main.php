@@ -25,4 +25,8 @@
     <div class="col-lg-6"></div>
 
     <div class="col-lg-6"></div>
+
+    <div class="col-lg-12">
+        <img src="//{{root}}/images/screenshot.png" />
+    </div>
 </div>

@@ -1,4 +1,7 @@
 <?php
+/* TODO: redirektat na 404, ukoliko public datoteka ne postoji!!! */
+
+/* Includes */
      include('php/engine.php');
     
 /* Constants */
@@ -17,6 +20,20 @@
 
     route('/fotns/*', function () {
         header('Content-Type: */*');
+        get_public();
+    });
+
+    route('/images/*', function () {
+        if (fnmatch(route(), '/images/*.jpg')) {
+            header('Content-Type: image/jpeg');
+        }
+        elseif (fnmatch(route(), '/images/*.png')) {
+            header('Content-Type: image/png');
+        }
+        else {
+            header('Content-Type: image/*');
+        }
+
         get_public();
     });
 

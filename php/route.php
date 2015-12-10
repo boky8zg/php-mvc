@@ -6,12 +6,12 @@
         global $is_routed;
 
         if (isset($route)) {
-            if (fnmatch($route, $_SERVER['REQUEST_URI'])) {
+            if (fnmatch($route, REQUEST)) {
                 call_user_func($method);
                 $is_routed = TRUE;
             }
         } else {
-            return $_SERVER['REQUEST_URI'];
+            return REQUEST;
         }
     }
     
@@ -24,10 +24,10 @@
     }
     
     function param($index) {
-        return explode('/', $_SERVER['REQUEST_URI'])[$index + 1];
+        return explode('/', REQUEST)[$index + 1];
     }
     
     function root() {
-        return $_SERVER['HTTP_HOST'];
+        return HOST;
     }
 ?>

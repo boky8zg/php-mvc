@@ -1,4 +1,6 @@
 <?php
+    namespace Controller;
+
     include('menu.php');
 
     global $common;
@@ -12,7 +14,7 @@
         global $common;
 
         return template('index.php', array_merge($common, array(
-            'content' => load('main.php')
+            'content' => template('main.php', $common)
         )));
     }
 
